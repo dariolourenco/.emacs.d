@@ -10,3 +10,6 @@
 [submodule "plugins/request"]
 	path = plugins/request
 	url = https://github.com/tkf/emacs-request.git
+[submodule "plugins/markdown-mode"]
+	path = plugins/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git

@@ -25,6 +25,9 @@
 (require 'el-get)
 
 ;----------------------;
+;       Utilities      ;
+;----------------------;
+
 ;; Popup
 (include-elget-plugin "popup")
 (require 'popup)
@@ -40,16 +43,22 @@
 (include-plugin "request")
 (require 'request)
 
+;; Camelcase functions
+(require 'camelcase-settings)
 
-      
 ;---------------;
 ;    MODES      ;
 ;---------------;
 
+;; Ido mode
+(require 'ido)
+(ido-mode 1)
+
 ;; Python mode
 (require 'python-settings)
       
-      
+;; Markdown mode
+(require 'markdown-settings)      
       
       
       
