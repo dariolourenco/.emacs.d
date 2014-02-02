@@ -1,0 +1,3 @@
+[submodule "plugins/dakrone-theme"]
+	path = plugins/dakrone-theme
+	url = https://github.com/dakrone/dakrone-theme.git
