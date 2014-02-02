@@ -60,7 +60,8 @@
 ;; Markdown mode
 (require 'markdown-settings)      
       
-      
+;; LaTeX and Auctex
+(require 'latex-settings)      
       
       
       
