@@ -10,18 +10,44 @@
 (require 'custom-functions)
 (require 'general-settings)
 
+;----------------------;
 ;; Additional repos
 ;; marmelade repo
+;----------------------;
 
 (require 'package)
 (add-to-list 'package-archives 
     '("marmalade" .
       "http://marmalade-repo.org/packages/"))
 
+;; el-get
+(include-plugin "el-get")
+(require 'el-get)
+
+;----------------------;
+;; Popup
+(include-elget-plugin "popup")
+(require 'popup)
+
+;; Auto complete
+(require 'auto-complete-settings)      
+
+;; Websocket
+(include-plugin "websocket")
+(require 'websocket)
+
+;; Request
+(include-plugin "request")
+(require 'request)
+
+
       
-      
-      
-      
+;---------------;
+;    MODES      ;
+;---------------;
+
+;; Python mode
+(require 'python-settings)
       
       
       
