@@ -15,15 +15,14 @@
 ;; marmelade repo
 ;----------------------;
 
-(require 'package)
-(add-to-list 'package-archives 
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
-
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         
 ;; el-get
 (include-plugin "el-get")
 (require 'el-get)
-
+(package-initialize)
 ;----------------------;
 ;       Utilities      ;
 ;----------------------;
