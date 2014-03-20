@@ -14,6 +14,7 @@
 ;; Additional repos
 ;; marmelade repo
 ;----------------------;
+(setq ring-bell-function 'ignore)      
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -61,7 +62,6 @@
       
 ;; LaTeX and Auctex
 (require 'latex-settings)      
-      
       
       
       
