@@ -1,8 +1,13 @@
 .emacs.d
 ========
 
-el-get-install auto-complete
+
+pacman -S python-virtualenv auctex
 
 
-pacman -S python-virtualenv
-el-get-install jedi
+first run
+========
+M-x package-install popup
+M-x package-install auto-complete
+M-x package-install jedi
+M-x package-install ac-math
