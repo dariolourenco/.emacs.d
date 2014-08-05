@@ -35,6 +35,11 @@
 ;; Auto complete
 (require 'auto-complete-settings)      
 
+;; Autopair
+(include-plugin "autopair")
+(require 'autopair)
+(autopair-global-mode)
+
 ;; Websocket
 (include-plugin "websocket")
 (require 'websocket)
