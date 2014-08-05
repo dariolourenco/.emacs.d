@@ -13,3 +13,6 @@
 [submodule "plugins/markdown-mode"]
 	path = plugins/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
+[submodule "plugins/autopair"]
+	path = plugins/autopair
+	url = https://github.com/capitaomorte/autopair.git
