@@ -68,6 +68,8 @@
 ; don't blink the cursor
 (blink-cursor-mode 0)
 
+; highlight current line
+(global-hl-line-mode 1)
 
 ; make sure transient mark mode is enabled (it should be by default,
 ; but just in case)
@@ -92,6 +94,7 @@
 (setq backup-inhibited t)
 ; disable auto save
 (setq auto-save-default nil)
+
 
 
 (provide 'general-settings)
