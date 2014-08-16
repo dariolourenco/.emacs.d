@@ -14,7 +14,8 @@
 
 ; packages to install
 (setq 
- my-packages '(color-theme-solarized
+ my-packages '(autopair
+               color-theme-solarized
                auto-complete
                popup
                nyan-mode

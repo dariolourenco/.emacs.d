@@ -15,6 +15,12 @@
 ;;; Utilities ;;;
 ;---------------;
 
+;; Auto complete
+(require 'auto-complete-settings)
+
+;; yasnippet
+(require 'yasnippet-settings)
+
 ;-----------;
 ;;; Modes ;;;
 ;-----------;
@@ -26,9 +32,17 @@
 ;; Nyancat mode!
 (nyan-mode 1)
 
+;; Popup
+(include-elget-plugin "popup")
+(require 'popup)
+s
+(require 'autopair)
+(autopair-global-mode) ;; enable autopair in all buffers
+
+
 ;---------------------------------------------------------------------
 ;; Put auto 'custom' changes in a separate file (this is stuff like
 ;; custom-set-faces and custom-set-variables)
 (load
- (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
- 'noerror)
+(setq custom-file (expand-file-name "settings/custom.el" user-emacs-directory))
+'noerror)
