@@ -35,7 +35,8 @@
 ;; Popup
 (include-elget-plugin "popup")
 (require 'popup)
-s
+
+
 (require 'autopair)
 (autopair-global-mode) ;; enable autopair in all buffers
 
