@@ -36,11 +36,13 @@
 (include-elget-plugin "popup")
 (require 'popup)
 
-
+;; autopair
 (require 'autopair)
 (autopair-global-mode) ;; enable autopair in all buffers
 
-
+;; undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode)
 ;---------------------------------------------------------------------
 ;; Put auto 'custom' changes in a separate file (this is stuff like
 ;; custom-set-faces and custom-set-variables)

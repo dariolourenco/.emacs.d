@@ -14,7 +14,8 @@
 
 ; packages to install
 (setq 
- my-packages '(autopair
+ my-packages '(undo-tree
+               autopair
                color-theme-solarized
                auto-complete
                popup
