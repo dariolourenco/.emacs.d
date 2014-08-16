@@ -18,5 +18,8 @@
 (defun include-elget-plugin (plugin)
 (add-to-list 'load-path (make-elget-path plugin)))
 
+(defun include-plugin (plugin)
+(add-to-list 'load-path (make-plugin-path plugin)))
+
 (provide 'custom-functions)
 

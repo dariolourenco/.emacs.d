@@ -15,6 +15,7 @@
 ; packages to install
 (setq 
  my-packages '(undo-tree
+               markdown-mode
                autopair
                color-theme-solarized
                auto-complete
