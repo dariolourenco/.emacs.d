@@ -60,3 +60,80 @@ Disables all packages that are member of the
     (ace-jump-mode-enable-mark-sync)
     (setq ace-jump-mode-submode-list
           '(ace-jump-word-mode ace-jump-char-mode ace-jump-line-mode))))
+
+(user-package ag
+  :if (not noninteractive)
+  :ensure ag)
+
+(user-package alert
+  :ensure alert
+  :config (setq alert-default-style 'libnotify))
+
+(user-package auto-complete
+  :if (not noninteractive)
+  :ensure auto-complete
+  :diminish auto-complete-mode
+  :config (progn
+            (require 'auto-complete-config)
+            (ac-config-default)
+            (setq-default ac-sources '(ac-source-yasnippet
+                                       ac-source-filename
+                                       ac-source-abbrev
+                                       ac-source-dictionary
+                                       ac-source-words-in-same-mode-buffers))
+            (global-auto-complete-mode 1)))
+(user-package css-mode
+  :if (not noninteractive)
+  :ensure css-mode
+  :config (setq css-indent-offset 2))
+
+(user-package cus-theme
+  :config
+  (progn
+    (user-package helm-themes
+      :ensure helm-themes)
+    (defun my:load-random-theme (&optional msg)
+      "Load a random theme."
+      (interactive "p")
+      (let ((success))
+        (while (not success)
+          (let* ((themes (custom-available-themes))
+                 (random-theme
+                  (progn
+                    (random t)
+                    (nth (random (length themes)) themes))))
+            (condition-case err
+                (progn
+                  (helm-themes--load-theme (symbol-name random-theme))
+                  (setq success t))
+              (error
+               (message "Failed to load %s. Retrying..." random-theme)))
+            (when (and success msg)
+              (message "Loaded theme %s" random-theme))))))
+    (user-package ample-theme
+      :ensure ample-theme
+      :defer t)
+    (user-package color-theme-sanityinc-solarized
+      :ensure color-theme-sanityinc-solarized
+      :defer t)
+    (user-package color-theme-sanityinc-tomorrow
+      :ensure color-theme-sanityinc-tomorrow
+      :defer t)
+    (user-package cyberpunk-theme
+      :ensure cyberpunk-theme
+      :defer t)
+    (user-package leuven-theme
+      :ensure leuven-theme
+      :defer t)
+    (user-package monokai-theme
+      :ensure monokai-theme
+      :defer t)
+    (user-package zenburn-theme
+      :ensure zenburn-theme
+      :defer t)))
+
+(user-package dired-details
+  :if (not noninteractive)
+  :ensure dired-details
+  :config (progn
+            (dired-details-install)))
