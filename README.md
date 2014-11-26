@@ -5,9 +5,13 @@
 pacman -S python-virtualenv auctex lynx markdown
 
 
-#### first run ####
+#### packages ####
 
-* M-x package-install popup
-* M-x package-install auto-complete
-* M-x package-install jedi
-* M-x package-install ac-math
+* ace-jump-mode
+
+
+
+### keybidings ###
+
+C-c SPC           - ace-jump-mode
+C-c C-SPC 	  - ace-jump-pop-mark
