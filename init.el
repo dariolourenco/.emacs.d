@@ -137,3 +137,21 @@ Disables all packages that are member of the
   :ensure dired-details
   :config (progn
             (dired-details-install)))
+
+(user-package ido
+:if (not noninteractive)
+:config
+(progn
+(user-package ido-vertical-mode
+:ensure ido-vertical-mode)
+(user-package flx
+:ensure flx)
+(user-package flx-ido
+:ensure flx-ido)
+(setq ido-enable-flex-matching t
+ido-use-faces nil
+flx-ido-use-faces t)
+(ido-mode 1)
+(ido-everywhere 1)
+(ido-vertical-mode 1)
+(flx-ido-mode 1)))
