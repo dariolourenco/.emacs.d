@@ -13,7 +13,8 @@ pacman -S python-virtualenv auctex lynx markdown
 * auto-complete  ---
 * css mode
 * custom themes
-* dired
+* multiple cursors ------------
+
 
 #### possible packages #####
 
@@ -23,3 +24,5 @@ pacman -S python-virtualenv auctex lynx markdown
 C-c SPC           - ace-jump-mode
 C-c C-SPC 	  - ace-jump-pop-mark
 M-x ag		  - silversearcher-ag
+M-k               - kill this buffer
+C-z               - repeat last command
