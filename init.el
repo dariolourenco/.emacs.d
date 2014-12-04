@@ -56,6 +56,9 @@ Disables all packages that are member of the
 
 (set-default-font "Inconsolata-14")
 
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
 (user-package scroll-bar
   :config (scroll-bar-mode -1))
 
@@ -64,16 +67,16 @@ Disables all packages that are member of the
   :config (tool-bar-mode -1))
 
 
+(user-package menu-bar
+  :bind ("M-k" . kill-this-buffer)
+  :config (menu-bar-mode -1))
 
 
 
 (user-package cus-theme
   :config
   (progn
-    (user-package helm
-
-
--themes
+    (user-package helm-themes
       :ensure helm-themes)
     (defun my:load-random-theme (&optional msg)
       "Load a random theme."
@@ -210,11 +213,6 @@ Disables all packages that are member of the
 (user-package markdown-mode
   :if (not noninteractive)
   :ensure markdown-mode)
-
-
-(user-package menu-bar
-  :bind ("M-k" . kill-this-buffer)
-  :config (menu-bar-mode -1))
 
 
 (user-package multi-web-mode
