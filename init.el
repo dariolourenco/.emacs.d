@@ -48,6 +48,8 @@ Disables all packages that are member of the
 
 ;;; Packages and config
 
+(set-default-font "Inconsolata-14")
+
 
 (user-package ace-jump-mode
   :if (not noninteractive)
