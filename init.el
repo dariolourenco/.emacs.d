@@ -1,3 +1,4 @@
+
 (defvar package-archives)
 (defvar package-archive-contents)
 (defvar my:disabled-packages nil)
@@ -41,6 +42,7 @@ Disables all packages that are member of the
 
 
 ;;; Environment
+
 (let ((bindir (expand-file-name "~/bin")))
   (setenv "PATH" (concat bindir  ":" (getenv "PATH")))
   (add-to-list 'exec-path bindir))
@@ -48,52 +50,30 @@ Disables all packages that are member of the
 
 ;;; Packages and config
 
+
+					;UI configs
+
+
 (set-default-font "Inconsolata-14")
 
+(user-package scroll-bar
+  :config (scroll-bar-mode -1))
 
-(user-package ace-jump-mode
-  :if (not noninteractive)
-  :bind (("C-c SPC" . ace-jump-mode)
-         ("C-c C-SPC" . ace-jump-mode-pop-mark))
-  :ensure ace-jump-mode
-  :config
-  (progn
-    (setq ace-jump-mode-case-fold t)
-    (ace-jump-mode-enable-mark-sync)
-    (setq ace-jump-mode-submode-list
-          '(ace-jump-word-mode ace-jump-char-mode ace-jump-line-mode))))
 
-(user-package ag
-  :if (not noninteractive)
-  :ensure ag)
+(user-package tool-bar
+  :config (tool-bar-mode -1))
 
-(user-package alert
-  :ensure alert
-  :config (setq alert-default-style 'libnotify))
 
-(user-package auto-complete
-  :if (not noninteractive)
-  :ensure auto-complete
-  :diminish auto-complete-mode
-  :config (progn
-            (require 'auto-complete-config)
-            (ac-config-default)
-            (setq-default ac-sources '(ac-source-yasnippet
-                                       ac-source-filename
-                                       ac-source-abbrev
-                                       ac-source-dictionary
-                                       ac-source-words-in-same-mode-buffers))
-            (global-auto-complete-mode 1)))
 
-(user-package css-mode
-  :if (not noninteractive)
-  :ensure css-mode
-  :config (setq css-indent-offset 2))
+
 
 (user-package cus-theme
   :config
   (progn
-    (user-package helm-themes
+    (user-package helm
+
+
+-themes
       :ensure helm-themes)
     (defun my:load-random-theme (&optional msg)
       "Load a random theme."
@@ -134,6 +114,45 @@ Disables all packages that are member of the
     (user-package zenburn-theme
       :ensure zenburn-theme
       :defer t)))
+
+					; Packages
+
+(user-package ace-jump-mode
+  :if (not noninteractive)
+  :bind (("C-c SPC" . ace-jump-mode)
+         ("C-c C-SPC" . ace-jump-mode-pop-mark))
+  :ensure ace-jump-mode
+  :config
+  (progn
+    (setq ace-jump-mode-case-fold t)
+    (ace-jump-mode-enable-mark-sync)
+    (setq ace-jump-mode-submode-list
+          '(ace-jump-word-mode ace-jump-char-mode ace-jump-line-mode))))
+
+
+					;silversearcher
+(user-package ag
+  :if (not noninteractive)
+  :ensure ag)
+
+(user-package alert
+  :ensure alert
+  :config (setq alert-default-style 'libnotify))
+
+					;autocomplete
+(user-package auto-complete
+  :if (not noninteractive)
+  :ensure auto-complete
+  :diminish auto-complete-mode
+  :config (progn
+            (require 'auto-complete-config)
+            (ac-config-default)
+            (setq-default ac-sources '(ac-source-yasnippet
+                                       ac-source-filename
+                                       ac-source-abbrev
+                                       ac-source-dictionary
+                                       ac-source-words-in-same-mode-buffers))
+            (global-auto-complete-mode 1)))
 
 (user-package dired-details
   :if (not noninteractive)
@@ -188,14 +207,6 @@ Disables all packages that are member of the
       :ensure helm-flycheck)
     (bind-key "C-c ! !" #'helm-flycheck flycheck-mode-map)))
 
-(user-package js
-  :if (not noninteractive)
-  :config
-  (progn
-    (user-package jquery-doc
-      :ensure jquery-doc)
-    (add-hook 'js-mode-hook 'jquery-doc-setup)))
-
 (user-package markdown-mode
   :if (not noninteractive)
   :ensure markdown-mode)
@@ -204,6 +215,7 @@ Disables all packages that are member of the
 (user-package menu-bar
   :bind ("M-k" . kill-this-buffer)
   :config (menu-bar-mode -1))
+
 
 (user-package multi-web-mode
   :if (not noninteractive)
@@ -216,21 +228,42 @@ Disables all packages that are member of the
 	    (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
 	    (multi-web-global-mode 1)))
 
-(user-package paren
-  :config (show-paren-mode 1))
+
+(user-package js
+  :if (not noninteractive)
+  :config
+  (progn
+    (user-package jquery-doc
+      :ensure jquery-doc)
+    (add-hook 'js-mode-hook 'jquery-doc-setup)))
+
+
+(user-package css-mode
+  :if (not noninteractive)
+  :ensure css-mode
+  :config (setq css-indent-offset 2))
+
 
 (user-package php-mode
   :if (not noninteractive)
   :ensure php-mode)
+
+
+(user-package paren
+  :config (show-paren-mode 1))
+
+
 
 (user-package powerline
   :if (not noninteractive)
   :ensure powerline
   :config (powerline-default-theme))
 
+
 (user-package repeat
   :if (not noninteractive)
   :bind ("C-z" . repeat))
+
 
 (user-package rainbow-mode
   :if (not noninteractive)
@@ -240,17 +273,14 @@ Disables all packages that are member of the
 		    (add-to-list 'rainbow-r-colors-major-mode-list mode))
 		  '(css-mode emacs-lisp-mode lisp-interaction-mode))
 	    (add-hook 'prog-mode-hook #'rainbow-turn-on)))
+
+
+
 (user-package rainbow-delimiters
   :if (not noninteractive)
   :ensure rainbow-delimiters
   :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-
-(user-package scroll-bar
-  :config (scroll-bar-mode -1))
-
-(user-package tool-bar
-  :config (tool-bar-mode -1))
 
 (user-package undo-tree
   :if (not noninteractive)
@@ -258,6 +288,7 @@ Disables all packages that are member of the
   :bind ("C-x _" . undo-tree-visualize)
   :ensure undo-tree
   :config (global-undo-tree-mode 1))
+
 
 (user-package smartparens
   :if (not noninteractive)
@@ -294,6 +325,74 @@ Disables all packages that are member of the
 	    (smartparens-global-mode 1)
 	    (show-smartparens-global-mode 1)))
 
+(user-package ibuffer
+  :if (not noninteractive)
+  :bind ("C-x C-b" . ibuffer)
+  :config
+  (progn
+    (setq ibuffer-show-empty-filter-groups nil
+          ibuffer-saved-filter-groups
+          (list (append
+                 (cons "default"
+                       ;; Generate filters by major modes from the
+                       ;; auto-mode-alist
+                       (let ((mode-filters))
+                         (dolist (element auto-mode-alist)
+                           (when (ignore-errors (fboundp (cdr element)))
+                             (let* ((mode (cdr element))
+                                    (name (if (string-match "\\(-mode\\)?\\'"
+                                                            (symbol-name mode))
+                                              (capitalize
+                                               (substring (symbol-name mode)
+                                                          0 (match-beginning 0)))
+                                            (symbol-name mode))))
+                               (when (not (assoc-string name mode-filters))
+                                 (setq mode-filters
+                                       (cons (list name (cons 'mode mode))
+                                             mode-filters))))))
+                         mode-filters))
+                 ;; Custom added filters.
+                 '(("Magit" (name . "^\\*magit"))
+                   ("Irc" (mode . rcirc-mode))
+                   ("Css" (mode . scss-mode))
+                   ("W3m" (name . "^\\*w3m"))))))
+    (add-hook 'ibuffer-mode-hook
+              (lambda ()
+                (ibuffer-switch-to-saved-filter-groups "default")))))
+
+(user-package helm
+  :if (not noninteractive)
+  :ensure helm
+  :config
+  (progn
+    (bind-key "<RET>" #'helm-maybe-exit-minibuffer helm-map)
+    (bind-key "C-i" #'helm-execute-persistent-action helm-map)
+    (bind-key "C-j" #'helm-maybe-exit-minibuffer helm-map)
+    (bind-key "C-x b" #'helm-mini)
+    (bind-key "C-x C-f" #'helm-find-files)
+    (bind-key "C-z" #'helm-select-action helm-map)
+    (bind-key "M-y" #'helm-show-kill-ring)
+    (setq helm-buffers-fuzzy-matching t
+          helm-ff-auto-update-initial-value t
+          helm-ff-file-name-history-use-recentf t
+          helm-ff-search-library-in-sexp t
+          helm-ff-skip-boring-files t
+          helm-move-to-line-cycle-in-source t
+          helm-scroll-amount 8
+          helm-split-window-in-side-p t)
+    (helm-mode 1)
+    (user-package helm-swoop
+      :ensure helm-swoop)
+    (bind-key "C-x M-i" #'helm-multi-swoop)
+    (bind-key "M-I" #'helm-swoop-back-to-last-point)
+    (bind-key "M-i" #'helm-multi-swoop-all-from-helm-swoop helm-swoop-map)
+    (bind-key "M-i" #'helm-swoop)
+    (bind-key "M-i" #'helm-swoop-from-isearch isearch-mode-map)
+    (setq helm-multi-swoop-edit-save t
+          helm-swoop-speed-or-color t
+          helm-swoop-split-direction #'split-window-horizontally
+          helm-swoop-split-with-multiple-windows nil
+          helm-swoop-use-line-number-face t)))
 
 (setq inhibit-startup-screen t
       initial-scratch-message ""
