@@ -59,6 +59,9 @@ Disables all packages that are member of the
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
+(load-theme 'cyberpunk t)
+
+
 (user-package scroll-bar
   :config (scroll-bar-mode -1))
 
