@@ -48,6 +48,35 @@ Disables all packages that are member of the
 ;;; Packages and config
 
 
+(user-package tool-bar
+  :config (tool-bar-mode -1))
+
+(user-package menu-bar
+  :bind ("M-k" . kill-this-buffer)
+  :config (menu-bar-mode -1))
+
+(user-package savehist
+  :config (progn
+	    (savehist-mode 1)))
+
+(user-package scroll-bar
+  :config (scroll-bar-mode -1))
+
+(user-package paren
+  :config (show-paren-mode 1))
+
+(user-package hl-line
+  :if (not noninteractive)
+  :config (global-hl-line-mode))
+
+(user-package ag
+  :if (not noninteractive)
+  :ensure ag)
+
+(user-package alert
+  :ensure alert
+  :config (setq alert-default-style 'libnotify))
+
 (user-package ace-jump-mode
   :if (not noninteractive)
   :bind (("C-c SPC" . ace-jump-mode)
@@ -59,14 +88,6 @@ Disables all packages that are member of the
     (ace-jump-mode-enable-mark-sync)
     (setq ace-jump-mode-submode-list
 	  '(ace-jump-word-mode ace-jump-char-mode ace-jump-line-mode))))
-
-(user-package ag
-  :if (not noninteractive)
-  :ensure ag)
-
-(user-package alert
-  :ensure alert
-  :config (setq alert-default-style 'libnotify))
 
 (user-package auto-complete
   :if (not noninteractive)
@@ -85,11 +106,6 @@ Disables all packages that are member of the
 (user-package browse-url
   :config (setq browse-url-browser-function 'browse-url-generic
 		browse-url-generic-program "firefox"))
-
-(user-package css-mode
-  :if (not noninteractive)
-  :ensure css-mode
-  :config (setq css-indent-offset 2))
 
 
 (user-package cus-theme
@@ -246,11 +262,6 @@ Disables all packages that are member of the
       :ensure helm-flycheck)
     (bind-key "C-c ! !" #'helm-flycheck flycheck-mode-map)))
 
-
-(user-package hl-line
-  :if (not noninteractive)
-  :config (global-hl-line-mode))
-
 (user-package ibuffer
   :if (not noninteractive)
   :bind ("C-x C-b" . ibuffer)
@@ -332,10 +343,6 @@ Disables all packages that are member of the
   :if (not noninteractive)
   :ensure markdown-mode)
 
-(user-package menu-bar
-  :bind ("M-k" . kill-this-buffer)
-  :config (menu-bar-mode -1))
-
 (user-package multiple-cursors
   :bind (("M-m" . mc/mark-more-like-this-extended)
 	 ("M-p" . mc/mark-all-in-region)
@@ -366,6 +373,11 @@ Disables all packages that are member of the
 	    (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
 	    (multi-web-global-mode 1)))
 
+(user-package css-mode
+  :if (not noninteractive)
+  :ensure css-mode
+  :config (setq css-indent-offset 2))
+
 (user-package org
   :ensure org
   :config
@@ -378,9 +390,6 @@ Disables all packages that are member of the
 (user-package page
   :bind (("C-M-}" . forward-page)
 	 ("C-M-{" . backward-page)))
-
-(user-package paren
-  :config (show-paren-mode 1))
 
 (user-package php-mode
   :if (not noninteractive)
@@ -418,14 +427,6 @@ Disables all packages that are member of the
 		    (add-to-list 'rainbow-r-colors-major-mode-list mode))
 		  '(css-mode emacs-lisp-mode lisp-interaction-mode))
 	    (add-hook 'prog-mode-hook #'rainbow-turn-on)))
-
-(user-package savehist
-  :config (progn
-	    (savehist-mode 1)))
-
-
-(user-package scroll-bar
-  :config (scroll-bar-mode -1))
 
 (user-package smartparens
   :if (not noninteractive)
@@ -529,10 +530,6 @@ Disables all packages that are member of the
 					  ac-source-latex-commands)))
 	(add-to-list 'ac-modes 'latex-mode)
 	(add-hook 'latex-mode-hook 'ac-latex-mode-setup)))))
-
-(user-package tool-bar
-  :config (tool-bar-mode -1))
-
 
 (user-package undo-tree
   :if (not noninteractive)
