@@ -874,6 +874,10 @@ x-select-enable-primary t)
 
 (my-keys-minor-mode t)
 
+
+(if window-system
+    (load-theme 'cyberpunk t)
+  (load-theme 'wombat t))
 					;keys
 ;(global-set-key (kbd "RET") 'newline-and-indent)
 
