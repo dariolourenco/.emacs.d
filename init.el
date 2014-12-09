@@ -495,13 +495,13 @@ Disables all packages that are member of the
 	    (smartparens-global-mode 1)
 	    (show-smartparens-global-mode 1)))
 
-;; (user-package smex
-;;   :if (not noninteractive)
-;;   :ensure smex
-;;   :bind (("M-x" . smex)
-;; 	 ("M-X" . smex-major-mode-commands)
-;; 	 ("C-c M-x" . execute-extended-command))
-;;   :config (smex-initialize))
+(user-package smex
+  :if (not noninteractive)
+  :ensure smex
+  :bind (("M-x" . smex)
+	 ("M-X" . smex-major-mode-commands)
+	 ("C-c M-x" . execute-extended-command))
+  :config (smex-initialize))
 
 (user-package sunrise-commander
   :ensure sunrise-commander
@@ -843,8 +843,6 @@ instead and do not execute any external program."
   "A minor mode for my custom keys"
   t " Ж" 'my-keys-minor-mode-map)
 
-(my-keys-minor-mode t)
-
 (defun scratch ()
   "Switch to *scratch* buffer with using current `major-mode'."
   (interactive)
@@ -871,6 +869,10 @@ x-select-enable-primary t)
 (set-frame-font "Inconsolata-14")
 (global-visual-line-mode t)
 (delete-selection-mode t)
+
+
+
+(my-keys-minor-mode t)
 
 					;keys
 ;(global-set-key (kbd "RET") 'newline-and-indent)
