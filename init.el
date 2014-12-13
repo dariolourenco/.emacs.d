@@ -448,39 +448,39 @@ Disables all packages that are member of the
 			   (sp-local-tag "i" "\"<" "\">"))
 	    (sp-with-modes '(html-mode sgml-mode)
 	      (sp-local-pair "<" ">"))
-	    (bind-key (kbd "C-M-f") 'sp-forward-sexp sp-keymap)
-	    (bind-key (kbd "C-M-b") 'sp-backward-sexp sp-keymap)
-	    (bind-key (kbd "C-M-d") 'sp-down-sexp sp-keymap)
-	    (bind-key (kbd "C-M-a") 'sp-backward-down-sexp sp-keymap)
-	    (bind-key (kbd "C-S-a") 'sp-beginning-of-sexp sp-keymap)
-	    (bind-key (kbd "C-S-d") 'sp-end-of-sexp sp-keymap)
-	    (bind-key (kbd "C-M-e") 'sp-up-sexp sp-keymap)
-	    (bind-key (kbd ")") 'sp-up-sexp sp-keymap)
-	    (bind-key (kbd "C-M-u") 'sp-backward-up-sexp sp-keymap)
-	    (bind-key (kbd "C-M-t") 'sp-transpose-sexp sp-keymap)
-	    (bind-key (kbd "C-M-n") 'sp-next-sexp sp-keymap)
-	    (bind-key (kbd "C-M-p") 'sp-previous-sexp sp-keymap)
-	    (bind-key (kbd "C-M-k") 'sp-kill-sexp sp-keymap)
-	    (bind-key (kbd "C-M-w") 'sp-copy-sexp sp-keymap)
-	    (bind-key (kbd "M-<delete>") 'sp-unwrap-sexp sp-keymap)
-	    (bind-key (kbd "C-<right>") 'sp-forward-slurp-sexp sp-keymap)
-	    (bind-key (kbd "C-<left>") 'sp-forward-barf-sexp sp-keymap)
-	    (bind-key (kbd "C-M-<left>") 'sp-backward-slurp-sexp sp-keymap)
-	    (bind-key (kbd "C-M-<right>") 'sp-backward-barf-sexp sp-keymap)
-	    (bind-key (kbd "M-D") 'sp-splice-sexp sp-keymap)
-	    (bind-key (kbd "C-M-<delete>") 'sp-splice-sexp-killing-forward sp-keymap)
-	    (bind-key (kbd "C-M-<backspace>") 'sp-splice-sexp-killing-backward sp-keymap)
-	    (bind-key (kbd "C-S-<backspace>") 'sp-splice-sexp-killing-around sp-keymap)
-	    (bind-key (kbd "C-]") 'sp-select-next-thing-exchange sp-keymap)
-	    (bind-key (kbd "M-]") 'sp-select-previous-thing sp-keymap)
-	    (bind-key (kbd "C-M-]") 'sp-select-next-thing sp-keymap)
-	    (bind-key (kbd "M-F") 'sp-forward-symbol sp-keymap)
-	    (bind-key (kbd "M-B") 'sp-backward-symbol sp-keymap)
-	    (bind-key (kbd "M-<backspace>") 'sp-backward-kill-word sp-keymap)
-	    (bind-key (kbd "M-<up>") 'sp-splice-sexp-killing-backward sp-keymap)
-	    (bind-key (kbd "M-<down>") 'sp-splice-sexp-killing-forward sp-keymap)
-	    (bind-key (kbd "C-<right>") 'sp-forward-slurp-sexp sp-keymap)
-	    (bind-key (kbd "C-<left>") 'sp-forward-barf-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-f") 'sp-forward-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-b") 'sp-backward-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-d") 'sp-down-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-a") 'sp-backward-down-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-S-a") 'sp-beginning-of-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-S-d") 'sp-end-of-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-e") 'sp-up-sexp sp-keymap)
+	    ;; (bind-key (kbd ")") 'sp-up-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-u") 'sp-backward-up-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-t") 'sp-transpose-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-n") 'sp-next-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-p") 'sp-previous-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-k") 'sp-kill-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-w") 'sp-copy-sexp sp-keymap)
+	    ;; (bind-key (kbd "M-<delete>") 'sp-unwrap-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-<right>") 'sp-forward-slurp-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-<left>") 'sp-forward-barf-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-<left>") 'sp-backward-slurp-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-<right>") 'sp-backward-barf-sexp sp-keymap)
+	    ;; (bind-key (kbd "M-D") 'sp-splice-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-M-<delete>") 'sp-splice-sexp-killing-forward sp-keymap)
+	    ;; (bind-key (kbd "C-M-<backspace>") 'sp-splice-sexp-killing-backward sp-keymap)
+	    ;; (bind-key (kbd "C-S-<backspace>") 'sp-splice-sexp-killing-around sp-keymap)
+	    ;; (bind-key (kbd "C-]") 'sp-select-next-thing-exchange sp-keymap)
+	    ;; (bind-key (kbd "M-]") 'sp-select-previous-thing sp-keymap)
+	    ;; (bind-key (kbd "C-M-]") 'sp-select-next-thing sp-keymap)
+	    ;; (bind-key (kbd "M-F") 'sp-forward-symbol sp-keymap)
+	    ;; (bind-key (kbd "M-B") 'sp-backward-symbol sp-keymap)
+	    ;; (bind-key (kbd "M-<backspace>") 'sp-backward-kill-word sp-keymap)
+	    ;; (bind-key (kbd "M-<up>") 'sp-splice-sexp-killing-backward sp-keymap)
+	    ;; (bind-key (kbd "M-<down>") 'sp-splice-sexp-killing-forward sp-keymap)
+	    ;; (bind-key (kbd "C-<right>") 'sp-forward-slurp-sexp sp-keymap)
+	    ;; (bind-key (kbd "C-<left>") 'sp-forward-barf-sexp sp-keymap)
 	    (sp-with-modes sp--lisp-modes
 	      ;; disable ', it's the quote character!
 	      (sp-local-pair "'" nil :actions nil)
@@ -858,22 +858,25 @@ instead and do not execute any external program."
 
 ;;; global
 
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'erase-buffer 'disabled nil)
+(put 'scroll-left 'disabled nil)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (setq inhibit-startup-screen t
-initial-scratch-message ""
-x-select-enable-clipboard t
-x-select-enable-primary t)
+      initial-scratch-message ""
+      x-select-enable-clipboard t
+      x-select-enable-primary t)
 
 
 (set-frame-font "Inconsolata-14")
 (global-visual-line-mode t)
 (delete-selection-mode t)
 
-
-
 (my-keys-minor-mode t)
-
 
 (if window-system
     (load-theme 'cyberpunk t)
