@@ -838,6 +838,8 @@ instead and do not execute any external program."
 ;;; random utilities
 
 (defvar my-keys-minor-mode-map (make-keymap) "my keys")
+(define-key my-keys-minor-mode-map (kbd "C-+") 'text-scale-increase)
+(define-key my-keys-minor-mode-map (kbd "C--") 'text-scale-decrease)
 
 (define-minor-mode my-keys-minor-mode
   "A minor mode for my custom keys"
@@ -858,6 +860,12 @@ instead and do not execute any external program."
 
 ;;; global
 
+
+					;Personal information
+(setq user-full-name "Dario Lourenco"
+      user-mail-address "darioxfz@gmail.com")
+(load "~/.emacs.secrets" t)
+
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -872,7 +880,7 @@ instead and do not execute any external program."
       x-select-enable-primary t)
 
 
-(set-frame-font "Inconsolata-14")
+(set-frame-font "Inconsolata")
 (global-visual-line-mode t)
 (delete-selection-mode t)
 
@@ -881,6 +889,9 @@ instead and do not execute any external program."
 (if window-system
     (load-theme 'cyberpunk t)
   (load-theme 'wombat t))
+
+
+;registers to jum to a file or location
 					;keys
 ;(global-set-key (kbd "RET") 'newline-and-indent)
 
