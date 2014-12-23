@@ -368,7 +368,7 @@ Disables all packages that are member of the
   :config (progn
 	    (setq mweb-default-major-mode 'html-mode)
 	    (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
-			      (js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
+			      (js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>\\|<script>*" "</script>")
 			      (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
 	    (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
 	    (multi-web-global-mode 1)))
